@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/LOGO-KARINA.png">
+    <script>
+       function Verificar()
+       {
+        var nome, sobrenome, cpf, email, tel, senha, csenha;
+        document.form1.nome.style.background = "#FFF";
+        document.form1.sobrenome.style.background = "#FFF";
+        document.form1.cpf.style.background = "#FFF";
+        document.form1.email.style.background = "#FFF";
+        document.form1.tel.style.background = "#FFF";
+        document.form1.senha.style.background = "#FFF";
+        document.form1.csenha.style.background = "#FFF";
+
+        nome = document.form1.nome.value;
+        if (nome.length == 0)
+        {
+            alert("Preencha o campo nome");
+            document.form1.nome.style.background = "#d32000";
+            document.form1.nome.focus();
+            return false;
+        }
+
+        sobrenome = document.form1.sobrenome.value;
+        if (sobrenome.length == 0)
+        {
+            alert("Preencha o campo sobrenome");
+            document.form1.sobrenome.style.background = "#d32000";
+            document.form1.sobrenome.focus();
+            return false;
+        }
+
+        cpf = document.form1.cpf.value;
+        if (cpf.length == 0)
+        {
+            alert("Preencha o campo CPF");
+            document.form1.cpf.style.background = "#d32000";
+            document.form1.cpf.focus();
+            return false;
+        }
+
+        cpf = document.form1.cpf.value;
+        if (isNaN(cpf))
+        {
+            alert("Preencha o campo CPF somente com números");
+            document.form1.cpf.style.background = "#d32000";
+            document.form1.cpf.focus();
+            return false;
+        }
+
+        email = document.form1.email.value;
+        if (email.length == 0)
+        {
+            alert("Preencha o campo E-mail");
+            document.form1.email.style.background = "#d32000";
+            document.form1.email.focus();
+            return false;
+        }
+
+        email = document.form1.email.value;
+        if (email.indexOf("@") < 0)
+        {
+            alert("Preencha o campo E-mail corretamente, lembrando que endereço de email contém '@' e '.'");
+            document.form1.email.style.background = "#d32000";
+            document.form1.email.focus();
+            return false;
+        }
+
+        email = document.form1.email.value;
+        if (email.indexOf(".") < 0)
+        {
+            alert("Preencha o campo E-mail corretamente, lembrando que endereço de email contém '@' e '.'");
+            document.form1.email.style.background = "#d32000";
+            document.form1.email.focus();
+            return false;
+        }
+
+        tel = document.form1.tel.value;
+        if (tel.length == 0)
+        {
+            alert("Preencha o campo Telefone");
+            document.form1.tel.style.background = "#d32000";
+            document.form1.tel.focus();
+            return false;
+        }
+
+        tel = document.form1.tel.value;
+        if (isNaN(tel))
+        {
+            alert("Preencha o campo Telefone somente com números");
+            document.form1.tel.style.background = "#d32000";
+            document.form1.tel.focus();
+            return false;
+        }
+
+        senha = document.form1.senha.value;
+        if (senha.length == 0)
+        {
+            alert("Preencha o campo Senha");
+            document.form1.senha.style.background = "#d32000";
+            document.form1.senha.focus();
+            return false;
+        }
+
+        senha = csenha;
+        senha = document.form1.senha.value;
+        csenha = document.form1.csenha.value;
+
+        if (senha != csenha)
+        {
+            alert("Preencha o campo senha e o campo confirme com os mesmos carcteres!");
+            document.form1.senha.style.background = "#d32000";
+            document.form1.senha.focus();
+            return false;
+        }
+
+
+
+        csenha = document.form1.csenha.value;
+        if (csenha.length == 0)
+        {
+            alert("Preencha o campo Confirme");
+            document.form1.csenha.style.background = "#d32000";
+            document.form1.csenha.focus();
+            return false;
+        }
+
+        document.form1.submit();
+
+       }
+            
+      
+    </script>
+</head>
+
+<body id="cadastro">
+    <div class="cadastro">
+        <div class="formulario">
+            <form action="grava.jsp" name="form1" method="post">
+                <div>
+                    <label for="">Nome</label> <br>
+                    <input name="nome" type="text" placeholder="Digite o seu nome">
+                </div>
+                <div>
+                    <label for="">Sobrenome</label> <br>
+                    <input name="sobrenome" type="text" placeholder="Digite o seu sobrenome">
+                </div>
+                <div>
+                    <label for="">CPF</label> <br>
+                    <input name="cpf" type="text" placeholder="XXX.XXX.XXX-XX">
+                </div>
+                <div>
+                    <label for="">E-mail</label> <br>
+                    <input name="email" type="text" placeholder="Digite o seu email">
+                </div>
+                <div>
+                    <label for="">Telefone</label> <br>
+                    <input name="tel" type="tel" placeholder="(XX) X XXXX - XXXX">
+                </div>
+                <div>
+                    <label for="">Senha</label> <br>
+                    <input name="senha" type="password" placeholder="Crie uma senha">
+                </div>
+                <div>
+                    <label for="">Confirme</label> <br>
+                    <input name="csenha" type="password" placeholder="Confirme sua senha">
+                </div>
+                <div>
+                    <input class="button" type="button" value="Enviar" onclick="Verificar()">
+                </div>
+            </form>
+        </div>
+        <div class="detalhe">
+            <img src="imagens/LOGO-KARINA.png" alt="LOGO-KARINA">
+            <h2>Cadastre-se!</h2>
+            <a class="link-cadastro" href="index.php">Login</a>
+        </div>
+    </div>
+</body>
+</html>
